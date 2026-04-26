@@ -255,11 +255,46 @@
   .walkaway h2 { color: var(--color-cream); }
   .walkaway p { color: rgba(250, 250, 248, 0.75); }
 
+  .walkaway-layout {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 56px;
+    align-items: start;
+    margin-top: 36px;
+  }
+
+  @media (max-width: 720px) {
+    .walkaway-layout { grid-template-columns: 1fr; gap: 40px; }
+    .walkaway-qr { justify-self: start; }
+  }
+
+  .walkaway-qr {
+    background: var(--color-cream);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .walkaway-qr img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
+  .walkaway-qr .qr-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-warm-gray);
+    margin-top: 12px;
+  }
+
   .walkaway-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 18px;
-    margin-top: 36px;
   }
 
   .walkaway-grid .item {
@@ -446,18 +481,25 @@
   <div class="container">
     <h2>Walk away with this.</h2>
 
-    <div class="walkaway-grid">
-      <div class="item">
-        <div class="item-label">One</div>
-        <div class="item-text">Grab the two skill files from the handout.</div>
+    <div class="walkaway-layout">
+      <div class="walkaway-grid">
+        <div class="item">
+          <div class="item-label">One</div>
+          <div class="item-text">Grab the two skill files from the handout.</div>
+        </div>
+        <div class="item">
+          <div class="item-label">Two</div>
+          <div class="item-text">Run sparring partner on whatever you'd pitch a stranger tomorrow.</div>
+        </div>
+        <div class="item">
+          <div class="item-label">Three</div>
+          <div class="item-text">If the idea survives, run pre-mortem before you tell anyone "we're doing this."</div>
+        </div>
       </div>
-      <div class="item">
-        <div class="item-label">Two</div>
-        <div class="item-text">Run sparring partner on whatever you'd pitch a stranger tomorrow.</div>
-      </div>
-      <div class="item">
-        <div class="item-label">Three</div>
-        <div class="item-text">If the idea survives, run pre-mortem before you tell anyone "we're doing this."</div>
+
+      <div class="walkaway-qr">
+        <img src="qr.png" alt="QR code linking to all resources from this talk" />
+        <div class="qr-label">Scan for everything</div>
       </div>
     </div>
 
